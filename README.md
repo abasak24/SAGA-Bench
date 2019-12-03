@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/abasak24/gapbs_mess/blob/master/img/saga.png" width="350"></p>
+<p align="center"><img src="https://github.com/abasak24/SAGA-Bench/blob/master/img/saga.png" width="350"></p>
 
 #
 
