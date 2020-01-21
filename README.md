@@ -32,6 +32,9 @@ The aforementioned kernels can be run with any of the following data structures:
 
 ## Input Datasets
 _TODO_
++ Shuffle datasets (script provided in folder inputResource)
++ Add weight and timestamps (script provided in folder inputResource)
++ The result input graph should look something like test.csv
 
 ## Installing, Compiling, and Running SAGA-Bench 
 1) git clone .....
@@ -46,7 +49,15 @@ An executable `frontEnd` will be created within the main directory. To run it, u
 Alternatively, there is an example script, runme.sh, which could be executed for an example run. 
 Each run creates two csv files: 1) Alg.csv and 2) Update.csv. These files contain per-batch compute and update times, respectively. 
 
+## Reproducing Software-Level Profiling Results in the Paper
+Need to mention to run the profile.sh script. 
+
 ## Using Intel Processor Counter Monitor (PCM) on SAGA-Bench
+_TODO_
+Provide instructions on how to use PCM.
++ Download install PCM 
++ Modify the Makefile (example provided in folder pcmResource)
++ Information on how to include PCM code before and after experimental code is provided in folder pcmResource
 
 ## References
 [1] D. Ediger, R. McColl, J. Riedy, D. Bader, "Stinger: High performance data structure for streaming graphs", _IEEE Conference on High Performance Extreme Computing (HPEC),_ pp. 1-5, 2012.
