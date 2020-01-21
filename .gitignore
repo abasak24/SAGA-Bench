@@ -32,7 +32,6 @@
 *.app
 
 frontEnd
-*.csv
 *.txt
 bin/*
 obj/*
