@@ -15,22 +15,23 @@ This repository contains code and scripts related to the ISPASS 2020 paper: SAGA
 * Hardware Profiling is done with [**Intel PCM**](https://software.intel.com/en-us/articles/intel-performance-counter-monitor), which runs on Intel&reg; Core&trade;, Xeon&reg;, Atom&trade; and Xeon Phi&trade; processors.
 * It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS.
 
-## Kernels
-Each kernel includes two versions: a traditional, "static" variant that processes the entire graph on every batch, and a "dynamic" variant that only processes "affected" vertices on every batch. 
+## Data Structures 
++ Adjacency List
++ Stinger [1]
++ DegAwareRHH [2]
 
-In addition to a graph traversal micro-kernel, SAGA-Bench includes
+## Compute Models
++ Recomputation from scratch
++ Incremental
+
+## Algorithms
+Each algorithm has been implemented in both the aforementioned compute mdoels. 
 + Breadth-First Search (BFS)
 + Single-Source Shortest Paths (SSSP)
 + PageRank (PR)
 + Connected Components (CC)
 + Single-Source Widest Paths (SSWP)
 + Max Computation (MC)
-
-## Data Structures 
-The aforementioned kernels can be run with any of the following data structures:
-+ Adjacency List
-+ Stinger [1]
-+ DegAwareRHH [2]
 
 ## Overview of the Directory Structure 
 _TODO_
@@ -58,6 +59,8 @@ Alternatively, there is an example script, runme.sh, which could be executed for
 Each run creates two csv files: 1) Alg.csv and 2) Update.csv. These files contain per-batch compute and update times, respectively. 
 
 ## Reproducing Software-Level Profiling Results in the SAGA-Bench Paper
+_TODO_
+
 Need to mention to run the profile.sh script. 
 
 ## Reproducing Hardware-Level Profiling Results in the SAGA-Bench Paper
@@ -70,6 +73,14 @@ _TODO_
 
 ## Adding your own data structure, compute model, or algorithm 
 _TODO_
+
+## Miscellaneous
+_TODO_
+
++ Mention errorExtractor.cc: validation between FS and INC models 
++ traverse algorithm 
++ adList single threaded
++ acknowledge GAP from where we borrow and modify software techniques 
 
 ## References
 [1] D. Ediger, R. McColl, J. Riedy, D. Bader, "Stinger: High performance data structure for streaming graphs", _IEEE Conference on High Performance Extreme Computing (HPEC),_ pp. 1-5, 2012.
