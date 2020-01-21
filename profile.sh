@@ -9,7 +9,7 @@ export OMP_NUM_THREADS=64
 export OMP_PROC_BIND=close
 export OMP_PLACES={2}:64:1
 
-dataDir=/home/abasak/graph_project/graphs/snap/
+dataDir=/home/abanti/datasets/SAGAdatasets/
 STRUCTURES=(adListChunked adListShared degAwareRHH stinger)
 batchSize=500000 
 RUNS=3
@@ -58,7 +58,7 @@ do
          ./frontEnd -d 1 -w ${ALGORITHMS[$algorithm]} -f ${dataDir}$dataset -b ${batchSize} -s $structure -n ${DATASETS[$dataset]} -a $algorithm -t ${NumThreads}
         fi        
         # make right directory and move the two generated files into it  
-        DIRECTORY=/home/abasak/SAGA_data_updated/baseline/${algorithm}/${structure}/${dataset}/Run${runs}      
+        DIRECTORY=/home/abanti/SAGA-Bench/baseline/${algorithm}/${structure}/${dataset}/Run${runs}      
         mkdir -p ${DIRECTORY}
         mv Alg*.csv ${DIRECTORY}/
         mv Update*.csv ${DIRECTORY}/

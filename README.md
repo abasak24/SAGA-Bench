@@ -43,7 +43,7 @@ An executable `frontEnd` will be created within the main directory. To run it, u
 ```
 ./frontEnd -d directed -w weighted -f /datasetPath -b batchSize -s dataStructure -n numOfNodes -a algorithm -t numOfThreads
 ```
-Alternatively, there is an example script, runme.sh, whcih could be executed for an example run. 
+Alternatively, there is an example script, runme.sh, which could be executed for an example run. 
 Each run creates two csv files: 1) Alg.csv and 2) Update.csv. These files contain per-batch compute and update times, respectively. 
 
 ## Using Intel Processor Counter Monitor (PCM) on SAGA-Bench
