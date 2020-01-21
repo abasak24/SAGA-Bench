@@ -32,18 +32,8 @@
 *.app
 
 frontEnd
-bfs
-cc
-pr
-sssp
-bc
-tc
 *.csv
 *.txt
-outfiles/*
 bin/*
-test/obj/*
-test/bin/*
-data/*
+obj/*
 src/common/pcm*
-scripts/env
