@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Version](https://img.shields.io/badge/version-alpha-orange.svg)](https://img.shields.io/badge/version-alpha-orange.svg)
 
+This repository contains code and scripts related to the ISPASS 2020 paper: SAGA-Bench: Software and Hardware Characterization of Streaming Graph Analytics Wowrkloads
+
 **SAGA-Bench (Streaming Graph Analytics)** is designed to serve both the hardware and software communities as an open-source platform for streaming graph analytics research. Our goal is to provide a **unified, open-source** implementation of various dnamic graph processing data structures and algorithms. SAGA-Bench implements coarse-grained runtime profiling, as well as hardware analysis via Intel Processor Counter Monitor (PCM).
 
 ## Requirements
@@ -30,6 +32,11 @@ The aforementioned kernels can be run with any of the following data structures:
 + Stinger [1]
 + DegAwareRHH [2]
 
+## Overview of the Directory Structure 
+_TODO_
++ Brief description of how src folder is organized
++ what is inputInfo? pcmInfo? errorExtractor.cc? 
+
 ## Input Datasets
 _TODO_
 + Shuffle datasets (script provided in folder inputResource)
@@ -37,6 +44,7 @@ _TODO_
 + The result input graph should look something like test.csv
 
 ## Installing, Compiling, and Running SAGA-Bench 
+_TODO_
 1) git clone .....
 2) mkdir bin obj
 3) make 
@@ -49,15 +57,19 @@ An executable `frontEnd` will be created within the main directory. To run it, u
 Alternatively, there is an example script, runme.sh, which could be executed for an example run. 
 Each run creates two csv files: 1) Alg.csv and 2) Update.csv. These files contain per-batch compute and update times, respectively. 
 
-## Reproducing Software-Level Profiling Results in the Paper
+## Reproducing Software-Level Profiling Results in the SAGA-Bench Paper
 Need to mention to run the profile.sh script. 
 
-## Using Intel Processor Counter Monitor (PCM) on SAGA-Bench
+## Reproducing Hardware-Level Profiling Results in the SAGA-Bench Paper
 _TODO_
-Provide instructions on how to use PCM.
++ We used Intel Processor Counter Monitor (PCM) for memory bandwidth, QPI bandwidth, and cache hit ratio/MPKI measurements. PCM can be found here: https://github.com/opcm/pcm
++ Provide instructions on how to use PCM.
 + Download install PCM 
 + Modify the Makefile (example provided in folder pcmResource)
 + Information on how to include PCM code before and after experimental code is provided in folder pcmResource
+
+## Adding your own data structure, compute model, or algorithm 
+_TODO_
 
 ## References
 [1] D. Ediger, R. McColl, J. Riedy, D. Bader, "Stinger: High performance data structure for streaming graphs", _IEEE Conference on High Performance Extreme Computing (HPEC),_ pp. 1-5, 2012.
