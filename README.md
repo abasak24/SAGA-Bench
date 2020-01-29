@@ -9,7 +9,6 @@ This repository contains code, scripts, and user instructions related to the fol
 
 > **A. Basak, J. Lin, R. Lorica, X. Xie, Z. Chishti, A. Alameldeen, and Y. Xie, *SAGA-Bench: Software and Hardware Characterization of Streaming Graph Analytics Workloads***
 
-
 **SAGA-Bench** is a C++ benchmark for **S**tre**A**ming **G**raph **A**nalytics containing a collection of data structures and compute models on the same platform for a fair and systematic study. SAGA-Bench simultaneously provides 1) a common platform for performance analysis studies of software techniques and 2) a benchmark for architecture studies. SAGA-Bench implements runtime profiling, as well as hardware analysis via [Intel Processor Counter Monitor (PCM)](https://software.intel.com/en-us/articles/intel-performance-counter-monitor).
 
 ## Requirements
@@ -19,9 +18,10 @@ This repository contains code, scripts, and user instructions related to the fol
 * It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS.
 
 ## Data Structures in SAGA-Bench
-+ Adjacency List
-+ Stinger [1]
-+ DegAwareRHH [2]
++ Adjacency List (shared style multithreading)
++ Adjacency List (chunked style multithreading)
++ Stinger 
++ Degree-Aware Hashing
 
 ## Compute Models
 + Recomputation from scratch
@@ -38,8 +38,11 @@ Each algorithm has been implemented in both the aforementioned compute mdoels.
 
 ## Overview of the Directory Structure 
 _TODO_
-+ Brief description of how src folder is organized
-+ what is inputInfo? pcmInfo? errorExtractor.cc? 
++ **src/dynamic**: Brief description of how src folder is organized
++ **src/common**: what is inputInfo? pcmInfo? errorExtractor.cc? 
++ **inputResource**: 
++ **pcmResource**: 
++ Others: 
 
 ## Input Datasets
 _TODO_
