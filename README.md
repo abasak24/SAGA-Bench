@@ -7,7 +7,7 @@
 
 This repository contains code, scripts, and user instructions related to the following [ISPASS 2020] (https://ispass.org/ispass2020/) paper: SAGA-Bench: Software and Hardware Characterization of Streaming Graph Analytics Wowrkloads
 
-**SAGA-Bench (Streaming Graph Analytics)** is designed to serve both the hardware and software communities as an open-source platform for streaming graph analytics research. Our goal is to provide a **unified, open-source** implementation of various dnamic graph processing data structures and algorithms. SAGA-Bench implements coarse-grained runtime profiling, as well as hardware analysis via Intel Processor Counter Monitor (PCM).
+**SAGA-Bench** SAGA-Bench is a C++ benchmark for \uline{S}tre\uline{A}ming \uline{G}raph \uline{A}nalytics containing a collection of data structures and compute models on the same platform for a fair and systematic study. SAGA-Bench simultaneously provides 1) a common platform for performance analysis studies of software techniques and 2) a benchmark for architecture studies. SAGA-Bench implements runtime profiling, as well as hardware analysis via Intel Processor Counter Monitor (PCM).
 
 ## Requirements
 * SAGA-Bench is implemented in **C++11**, with scripts in **Python3** and **Bash**. 
