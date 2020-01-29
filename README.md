@@ -5,9 +5,9 @@
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Version](https://img.shields.io/badge/version-alpha-orange.svg)](https://img.shields.io/badge/version-alpha-orange.svg)
 
-This repository contains code, scripts, and user instructions related to the following [ISPASS 2020] (https://ispass.org/ispass2020/) paper: SAGA-Bench: Software and Hardware Characterization of Streaming Graph Analytics Wowrkloads
+This repository contains code, scripts, and user instructions related to the following [ISPASS 2020](https://ispass.org/ispass2020/) paper: SAGA-Bench: Software and Hardware Characterization of Streaming Graph Analytics Wowrkloads
 
-**SAGA-Bench** SAGA-Bench is a C++ benchmark for \uline{S}tre\uline{A}ming \uline{G}raph \uline{A}nalytics containing a collection of data structures and compute models on the same platform for a fair and systematic study. SAGA-Bench simultaneously provides 1) a common platform for performance analysis studies of software techniques and 2) a benchmark for architecture studies. SAGA-Bench implements runtime profiling, as well as hardware analysis via Intel Processor Counter Monitor (PCM).
+**SAGA-Bench** is a C++ benchmark for **S**tre**A**ming **G**raph **A**nalytics containing a collection of data structures and compute models on the same platform for a fair and systematic study. SAGA-Bench simultaneously provides 1) a common platform for performance analysis studies of software techniques and 2) a benchmark for architecture studies. SAGA-Bench implements runtime profiling, as well as hardware analysis via Intel Processor Counter Monitor (PCM).
 
 ## Requirements
 * SAGA-Bench is implemented in **C++11**, with scripts in **Python3** and **Bash**. 
