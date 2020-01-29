@@ -5,9 +5,9 @@
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Version](https://img.shields.io/badge/version-alpha-orange.svg)](https://img.shields.io/badge/version-alpha-orange.svg)
 
-This repository contains code, scripts, and user instructions related to the following [ISPASS 2020](https://ispass.org/ispass2020/) paper: SAGA-Bench: Software and Hardware Characterization of Streaming Graph Analytics Wowrkloads
+This repository contains code, scripts, and user instructions related to the following [ISPASS 2020](https://ispass.org/ispass2020/) paper: **A. Basak, J. Lin, R. Lorica, X. Xie, Z. Chishti, A. Alameldeen, Y. Xie, SAGA-Bench: Software and Hardware Characterization of Streaming Graph Analytics Wowrkloads**
 
-**SAGA-Bench** is a C++ benchmark for **S**tre**A**ming **G**raph **A**nalytics containing a collection of data structures and compute models on the same platform for a fair and systematic study. SAGA-Bench simultaneously provides 1) a common platform for performance analysis studies of software techniques and 2) a benchmark for architecture studies. SAGA-Bench implements runtime profiling, as well as hardware analysis via Intel Processor Counter Monitor (PCM).
+**SAGA-Bench** is a C++ benchmark for **S**tre**A**ming **G**raph **A**nalytics containing a collection of data structures and compute models on the same platform for a fair and systematic study. SAGA-Bench simultaneously provides 1) a common platform for performance analysis studies of software techniques and 2) a benchmark for architecture studies. SAGA-Bench implements runtime profiling, as well as hardware analysis via [Intel Processor Counter Monitor (PCM)](https://software.intel.com/en-us/articles/intel-performance-counter-monitor).
 
 ## Requirements
 * SAGA-Bench is implemented in **C++11**, with scripts in **Python3** and **Bash**. 
@@ -15,7 +15,7 @@ This repository contains code, scripts, and user instructions related to the fol
 * Hardware Profiling is done with [**Intel PCM**](https://software.intel.com/en-us/articles/intel-performance-counter-monitor), which runs on Intel&reg; Core&trade;, Xeon&reg;, Atom&trade; and Xeon Phi&trade; processors.
 * It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS.
 
-## Data Structures 
+## Data Structures in SAGA-Bench
 + Adjacency List
 + Stinger [1]
 + DegAwareRHH [2]
