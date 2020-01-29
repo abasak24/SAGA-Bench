@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Version](https://img.shields.io/badge/version-alpha-orange.svg)](https://img.shields.io/badge/version-alpha-orange.svg)
 
-This repository contains code and scripts related to the ISPASS 2020 paper: SAGA-Bench: Software and Hardware Characterization of Streaming Graph Analytics Wowrkloads
+This repository contains code, scripts, and user instructions related to the following [ISPASS 2020] (https://ispass.org/ispass2020/) paper: SAGA-Bench: Software and Hardware Characterization of Streaming Graph Analytics Wowrkloads
 
 **SAGA-Bench (Streaming Graph Analytics)** is designed to serve both the hardware and software communities as an open-source platform for streaming graph analytics research. Our goal is to provide a **unified, open-source** implementation of various dnamic graph processing data structures and algorithms. SAGA-Bench implements coarse-grained runtime profiling, as well as hardware analysis via Intel Processor Counter Monitor (PCM).
 
