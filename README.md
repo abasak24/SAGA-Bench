@@ -39,10 +39,10 @@ Each algorithm has been implemented in both the aforementioned compute mdoels.
 ## Overview of the Directory Structure 
 1. **src/dynamic**: Core implementations of the benchmark. They include the following:
     + `frontEnd.cc` is the main/top file which reads command-line parameters, reads edge batches from the input file, initiates the data structure, and launches the scheduler thread. 
-    + `builder.cc` contains function `dequeAndInsertEdge` which is executed by the scheduler thread. This functions updates the data structure and performs an algorithm.
-    + *Data structures*: `abstract_data_struc.h` is the top-level abstract class for a data structure. Specific implementations are contained in files `adListShared.h`, `adListCunked.h`, `stinger.h/stinger.cc`, and `darhh.h`. Each of these files implements the specific fashion in which the *update* operation needs to be performed on the given data structure.
-    + *Graph Traversal*: `traversal.h` implements how each data structure needs to be traversed to get the in-neighbors and out-neighbors. Traversal operation is achieved with two API functions: `in_neigh()` and `out_neigh()`. The specific traversal mechanism details of each data structure must be hidden from these two API functions. 
-    + *Compute Models and Algorithms*: 
+    + `builder.cc` contains function `dequeAndInsertEdge` which is executed by the scheduler thread. This functions updates the data structure and performs an algorithm on it.
+    + *Data structures*: `abstract_data_struc.h` is the top-level abstract class for a data structure. Specific implementations are contained in files `adListShared.h`, `adListCunked.h`, `stinger.h/stinger.cc`, and `darhh.h`. Each file implements the specific fashion in which the *update* operation needs to be performed on the given data structure.
+    + *Graph Traversal*: `traversal.h` implements how each data structure needs to be traversed to get the in-neighbors and the out-neighbors. Traversal operation is achieved with two API functions: `in_neigh()` and `out_neigh()`. The specific traversal mechanism details of each data structure must be hidden from these two API functions. 
+    + *Compute Models and Algorithms*: `topAlg.h` is the top-level algorithm file where every algorithm is registered. The specific implementation of each algorithm is contained in a file starting with *dyn_* (e.g., `dyn_bfs.h`). Each file implements both the compute models for a specific algorithm.For e.g., `dyn_bfs.h` contains functions `dynBFSAlg` for the *incremental* compute model and `BFSStartFromScratch` for the *recomputation from scratch* compute model.
 2. **src/common**: 
 3. **inputResource**: Several resources to produce input dataset file formats (see below).
 4. **pcmResource**: Several resources to integrate [Intel PCM](https://software.intel.com/en-us/articles/intel-performance-counter-monitor) with SAGA-Bench for hardware-level characterization (see below).
