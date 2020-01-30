@@ -58,16 +58,16 @@ SAGA-Bench is implemented in C++11 and the build system uses GNU Make. It has be
 2) mkdir bin obj
 3) make 
 
-An executable `frontEnd` will be created. To run it, use the command with specific parameters:
+An executable `frontEnd` will be created. `frontEnd` should be run with the following parameters. `./frontEnd --help` also provides this information.
 
 ```
--f      : provides a location to an input graph file
--b      : batch size (500K is used in our paper evaluation)
--d      : whether the input graph is directed or undirected. 0 = undirected; 1 = directed.
--w      : whether weights should be read from the input file. 0 = don't read weights; 1 = read weights. Weights are required only for SSSP and SSWP. 
--s      :
--a      : 
--t      : 
+-f : provides a location to an input graph file
+-b : batch size (500K is used in our paper evaluation)
+-d : whether the input graph is directed or undirected. 0 = undirected; 1 = directed.
+-w : whether weights should be read from the input file. 0 = don't read weights; 1 = read weights. Weights are required only for SSSP and SSWP. 
+-s :
+-a : 
+-t : 
 ```
 
 ```
