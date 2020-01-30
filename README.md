@@ -68,7 +68,7 @@ An executable `frontEnd` will be created. `frontEnd` should be run with the foll
 -s : data structure to be used (see *DATA STRUCTURE OPTIONS* below). 
 -a : algorithm to be run (see *ALGORITHM OPTIONS* below). 
 -n : max number of nodes the data structure must be initialized with. 
--t : number of data structure chunks for chunked-style adjacency list or degree-aware hashing. This parameter has no meaning for shared-style adjacency list and stinger (the value is not read for these two data structures).
+-t : number of data structure chunks for chunked-style adjacency list or degree-aware hashing. Each chunk corresponds to one thread. This parameter has no meaning for shared-style adjacency list and stinger (the value is not read for these two data structures).
 
 DATA STRUCTURE OPTIONS: 1) adListShared 2) adListChunked 3) degAwareRHH 4) stinger
 ALGORITHM OPTIONS: 1) prfromscratch 2) prdyn 3) ccfromscratch 4) ccdyn 5) mcfromscratch 6) mcdyn 7) bfsfromscratch 8) bfsyn 9) ssspfromscratch 10) ssspdyn 11) sswpfromscratch 12) sswpdyn
