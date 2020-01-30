@@ -38,9 +38,10 @@ Each algorithm has been implemented in both the aforementioned compute mdoels.
 
 ## Overview of the Directory Structure 
 1. **src/dynamic**: Core implementations of the benchmark. They include the following:
-    + `frontEnd.cc` is the *main* file which reads command line inputs, initiates the data structures, and launches the scheduler thread. 
+    + `frontEnd.cc` is the main/top file which reads command-line parameters, reads edge batches from the input file, initiates the data structure, and launches the scheduler thread. 
     + `builder.cc` contains function `dequeAndInsertEdge` which is executed by the scheduler thread. This functions updates the data structure and performs an algorithm.
-    + 
+    + *Data structures*: `abstract_data_struc.h` is the top-level abstract class for a data structure. Specific implementations are contained in files `adListShared.h`, `adListCunked.h`, `stinger.h/stinger.cc`, and `darhh.h`.
+    + *Compute Models and Algorithms*: 
 2. **src/common**: 
 3. **inputResource**: Several resources to produce input dataset file formats (see below).
 4. **pcmResource**: Several resources to integrate [Intel PCM](https://software.intel.com/en-us/articles/intel-performance-counter-monitor) with SAGA-Bench for hardware-level characterization (see below).
