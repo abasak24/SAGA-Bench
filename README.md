@@ -37,11 +37,10 @@ Each algorithm has been implemented in both the aforementioned compute mdoels.
 + Max Computation (MC)
 
 ## Overview of the Directory Structure 
-_TODO_
-+ **src/dynamic**: Core implementations of the benchmark. 
-+ **src/common**: 
-+ **inputResource**: Several resources to produce input dataset file formats (see below).
-+ **pcmResource**: Several resources to integrate [Intel PCM](https://software.intel.com/en-us/articles/intel-performance-counter-monitor) with SAGA-Bench for hardware-level characterization (see below).
+1. **src/dynamic**: Core implementations of the benchmark. 
+2. **src/common**: 
+3. **inputResource**: Several resources to produce input dataset file formats (see below).
+4. **pcmResource**: Several resources to integrate [Intel PCM](https://software.intel.com/en-us/articles/intel-performance-counter-monitor) with SAGA-Bench for hardware-level characterization (see below).
 + Others: errorExtractor.cc? 
 
 ## Input Datasets
