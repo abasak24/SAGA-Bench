@@ -51,12 +51,13 @@ Graph datasets are first randomly shuffled to break any ordering in the input fi
 Note: To use other file formats, change the file `src/dynamic/fileReader.h` to modify how SAGA-Bench should read the input file (i.e., change the function `convertCSVLineIntoEdge`). 
 
 ## Compiling and Running SAGA-Bench 
-## Requirements
+<!-- ## Requirements
 * SAGA-Bench is implemented in **C++11**, with scripts in **Python3** and **Bash**. 
 * The build system uses **GNU Make**.
 * Hardware Profiling is done with [**Intel PCM**](https://software.intel.com/en-us/articles/intel-performance-counter-monitor), which runs on Intel&reg; Core&trade;, Xeon&reg;, Atom&trade; and Xeon Phi&trade; processors.
-* It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS.
+* It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS. -->
 
+These instructions provide guidelines for running the software of the benchmark. To run SAGA-Bench with [Intel PCM](https://software.intel.com/en-us/articles/intel-performance-counter-monitor), please see below. 
 _TODO_
 1) git clone .....
 2) mkdir bin obj
