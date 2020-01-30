@@ -42,6 +42,10 @@ Please refer to the paper for a detailed description of each component.
 5. Others: `profile.sh` and `runme.sh` are example scripts to run experiments. `test.csv` is an example of the input dataset format. 
 
 ## Input Datasets
+We used *.csv* file format and the example of a typical dataset is provided in `test.csv`. Each line of the file means the following:
+```
+[source vertex ID], [destination vertex ID], [timestamp], [weight]
+```
 Graph datasets are first randomly shuffled to break any ordering in the input files. This is done to ensure the realistic scenario that streaming edges are not likely to come in any pre-defined order. The shuffled input file is then read in batches of 500K edges. Please refer to the paper to check which datasets we used for our evaluation. The resources for preparing the input datasets are provided in the folder **inputResource**. `shuffle.sh` can be used to shuffle a dataset file in .txt format (e.g., those found in [SNAP](https://snap.stanford.edu/data/)). After shuffling, weights and 
 + Shuffle datasets (script provided in folder inputResource)
 + Add weight and timestamps (script provided in folder inputResource)
