@@ -52,11 +52,7 @@ Note: To use other file formats, please change the file `src/dynamic/fileReader.
 
 ## Compiling and Running SAGA-Bench 
 ### Basic Instructions for Running the Software
-<!-- ## Requirements
-* SAGA-Bench is implemented in **C++11**, with scripts in **Python3** and **Bash**. 
-* The build system uses **GNU Make**.
-* Hardware Profiling is done with [**Intel PCM**](https://software.intel.com/en-us/articles/intel-performance-counter-monitor), which runs on Intel&reg; Core&trade;, Xeon&reg;, Atom&trade; and Xeon Phi&trade; processors.
-* It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS. -->
+SAGA-Bench is implemented in **C++11** and the build system uses **GNU Make**. It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS. The experiments for our paper have been run on Intel Xeon Gold 6142 (Skylake) server (please refer to Section IV of the paper for more details). The software has also been tested on Intel Xeon E5-2680 server. 
 
 1) git clone .....
 2) mkdir bin obj
