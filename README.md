@@ -52,7 +52,7 @@ Note: To use other file formats, please change the file `src/dynamic/fileReader.
 
 ## Compiling and Running SAGA-Bench 
 ### Basic Instructions for Running the Software
-*Note: These instructions are for running SAGA-Bench software only and are not sufficient for integrating PCM for hardware characterization. For instructions to integrate PCM, please see below.*
+*Note: These basic instructions are for running SAGA-Bench software only and are NOT sufficient for integrating PCM for hardware characterization. For instructions to integrate PCM, please see below.*
 
 SAGA-Bench is implemented in C++11 and the build system uses GNU Make. It uses both OPENMP and Pthreads to launch software threads. It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS. The experiments for our paper have been run on Intel Xeon Gold 6142 (Skylake) server (please refer to Section IV.A of the paper for more details). 
 
@@ -63,10 +63,10 @@ SAGA-Bench is implemented in C++11 and the build system uses GNU Make. It uses b
 An executable `frontEnd` will be created. `frontEnd` should be run with the following parameters. `./frontEnd --help` also provides this information.
 
 ```
--f : provides a location to an input graph file
+-f : provides a location to an input graph file in .csv format
 -b : batch size (500K is used in our paper evaluation)
--d : whether the input graph is directed or undirected. 0 = undirected; 1 = directed.
--w : whether weights should be read from the input file. 0 = don't read weights; 1 = read weights. Weights are required only for SSSP and SSWP. 
+-d : whether the input graph is directed or undirected. 0=undirected; 1=directed.
+-w : whether weights should be read from the input file. 0=don't read weights; 1=read weights. Weights are required only for SSSP and SSWP. 
 -s : data structure to be used (see DATA STRUCTURE OPTIONS below). 
 -a : algorithm to be run (see ALGORITHM OPTIONS below). 
 -n : max number of nodes the data structure must be initialized with. 
@@ -86,7 +86,7 @@ Please refer to Section IV.B of the paper for a detailed description of our meth
 We used Intel Processor Counter Monitor (PCM) for memory bandwidth, QPI bandwidth, and cache hit ratio/MPKI measurements. Please download, install, and compile PCM from here: https://github.com/opcm/pcm. Several resources for integrating PCM into SAGA-Bench have been provided in the folder **pcmResource**. First, it is necessary to change the *Makefile* of SAGA-Bench to link with PCM. We have provided an example *Makefile* in `pcmResource/Makefile_example`. Please change `PCM_DIR` in the example Makefile to the directory where you have installed your PCM. 
 `pcmResource/pcmBasic.h` contains code to measure L2/L3 MPKI, hit ratios, and QPI link utilizations. Please check the comments in `pcmResource/pcmBasic.h` to understand the output format/order. 
 `pcmResource/pcmMemory.h` contains code to measure memory bandwidth. Please check the comments and the functions `display_bandwidth_alg` and `display_bandwidth_update` in `pcmResource/pcmMemory.h` to understand the output format/order.  
-Please read `pcmResource/PCM.txt` to understand how to include `pcmResource/pcmBasic.h` or `pcmResource/pcmMemory.h` into SAGA-Bench's *update* or *compute* phases to measure the hardware counters. `pcmResource/PCM.txt` also provides the intiliatization and finalization code that must be included before and after the test code. 
+Please read `pcmResource/PCM.txt` to understand how to include `pcmResource/pcmBasic.h` or `pcmResource/pcmMemory.h` into SAGA-Bench's *update* or *compute* phases to measure the hardware counters. `pcmResource/PCM.txt` also provides the intiliatization and finalization code that must be included before and after the test code. Execution with PCM will produce *.csv* files for the *update* and *compute* phases with the corresponding hardware-level measurements.
 
 For example, to measure the memory bandwidth utilization details of the *update* phase, please do the following:
    + include `pcmResource/pcmMemory.h` in `src/dynamic/builder.cc` 
@@ -96,7 +96,7 @@ Similarly, to measure the memory bandwidth utilization details of the *compute* 
    + include `pcmResource/pcmMemory.h` in `src/dynamic/dyn_pr.h` 
    + include the memory-measurement related initialization and finalization code provided in `pcmResource/PCM.txt` in the function `dynPRAlg` before and after the algorithm implementation (just whether the timers are currently started and stopped).
 
-## Including Other Software Techniques to SAGA-Bench 
+## Including Other Software Techniques in SAGA-Bench 
 1. *Including a new data structure*:
 2. *Including a new compute model*:
 3. *Include a new algorithm*:
