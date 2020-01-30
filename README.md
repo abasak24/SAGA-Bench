@@ -40,7 +40,8 @@ Each algorithm has been implemented in both the aforementioned compute mdoels.
 1. **src/dynamic**: Core implementations of the benchmark. They include the following:
     + `frontEnd.cc` is the main/top file which reads command-line parameters, reads edge batches from the input file, initiates the data structure, and launches the scheduler thread. 
     + `builder.cc` contains function `dequeAndInsertEdge` which is executed by the scheduler thread. This functions updates the data structure and performs an algorithm.
-    + *Data structures*: `abstract_data_struc.h` is the top-level abstract class for a data structure. Specific implementations are contained in files `adListShared.h`, `adListCunked.h`, `stinger.h/stinger.cc`, and `darhh.h`.
+    + *Data structures*: `abstract_data_struc.h` is the top-level abstract class for a data structure. Specific implementations are contained in files `adListShared.h`, `adListCunked.h`, `stinger.h/stinger.cc`, and `darhh.h`. Each of these files implements the specific fashion in which the *update* operation needs to be performed on the given data structure.
+    + *Graph Traversal*: `traversal.h` implements how each data structure needs to be traversed to get the in-neighbors and out-neighbors. Traversal operation is achieved with two API functions: `in_neigh()` and `out_neigh()`. The specific traversal mechanism details of each data structure must be hidden from these two API functions. 
     + *Compute Models and Algorithms*: 
 2. **src/common**: 
 3. **inputResource**: Several resources to produce input dataset file formats (see below).
