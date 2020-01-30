@@ -52,7 +52,9 @@ Note: To use other file formats, please change the file `src/dynamic/fileReader.
 
 ## Compiling and Running SAGA-Bench 
 ### Basic Instructions for Running the Software
-SAGA-Bench is implemented in C++11 and the build system uses GNU Make. It used both OPENMP and Pthreads to launch software threads. It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS. The experiments for our paper have been run on Intel Xeon Gold 6142 (Skylake) server (please refer to Section IV.A of the paper for more details). 
+*Note: These instructions are for running SAGA-Bench software only and are not sufficient for integrating PCM for hardware characterization. For instructions to integrate PCM, please see below.*
+
+SAGA-Bench is implemented in C++11 and the build system uses GNU Make. It uses both OPENMP and Pthreads to launch software threads. It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS. The experiments for our paper have been run on Intel Xeon Gold 6142 (Skylake) server (please refer to Section IV.A of the paper for more details). 
 
 1. git clone https://github.com/abasak24/SAGA-Bench.git
 2. mkdir bin obj
