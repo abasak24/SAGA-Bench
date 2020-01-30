@@ -100,7 +100,7 @@ _TODO_
 + acknowledge GAP from where we borrow and modify software techniques 
 
 ## Contact
-In case of issues, please contact Abanti at abasak@ucsb.edu or Jilan at jilan@ucsb.edu. You could also raise an issue so that responses can help other users. 
+In case of issues, please contact Abanti at abasak@ucsb.edu. You could also raise an issue so that the response can help other users. 
 
 ## References
 [1] D. Ediger, R. McColl, J. Riedy, D. Bader, "Stinger: High performance data structure for streaming graphs", _IEEE Conference on High Performance Extreme Computing (HPEC),_ pp. 1-5, 2012.
