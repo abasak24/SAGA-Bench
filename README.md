@@ -37,7 +37,10 @@ Each algorithm has been implemented in both the aforementioned compute mdoels.
 + Max Computation (MC)
 
 ## Overview of the Directory Structure 
-1. **src/dynamic**: Core implementations of the benchmark. 
+1. **src/dynamic**: Core implementations of the benchmark. They include the following:
+    + `frontEnd.cc` is the *main* file which reads command line inputs, initiates the data structures, and launches the scheduler thread. 
+    + `builder.cc` contains function `dequeAndInsertEdge` which is executed by the scheduler thread. This functions updates the data structure and performs an algorithm.
+    + 
 2. **src/common**: 
 3. **inputResource**: Several resources to produce input dataset file formats (see below).
 4. **pcmResource**: Several resources to integrate [Intel PCM](https://software.intel.com/en-us/articles/intel-performance-counter-monitor) with SAGA-Bench for hardware-level characterization (see below).
