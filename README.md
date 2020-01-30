@@ -48,16 +48,18 @@ We used *.csv* file format and the example of a typical dataset is provided in `
 ```
 Graph datasets are first randomly shuffled to break any ordering in the input files. This is done to ensure the realistic scenario that streaming edges are not likely to come in any pre-defined order. The shuffled input file is then read in batches of 500K edges in our evaluation setup. Please refer to the paper to check which datasets we used for our evaluation. The resources for preparing the input datasets are provided in the folder **inputResource**. `inputResource/shuffle.sh` can be used to shuffle a dataset file in .txt format (e.g., those found in [SNAP](https://snap.stanford.edu/data/)). After shuffling, timestamps and weights can be added using `inputResource/addWeightAndTime.sh` and `inputResource/appendValues.py`, which will result in the final *.csv* format.
 
-Note: To use other file formats, change the file `src/dynamic/fileReader.h` to modify how SAGA-Bench should read the input file (i.e., change the function `convertCSVLineIntoEdge`). 
+Note: To use other file formats, please change the file `src/dynamic/fileReader.h` to modify how SAGA-Bench should read the input file (i.e., change the function `convertCSVLineIntoEdge`). 
 
 ## Compiling and Running SAGA-Bench 
+### Reproducing Software-Level Profiling Results in the SAGA-Bench Paper
 <!-- ## Requirements
 * SAGA-Bench is implemented in **C++11**, with scripts in **Python3** and **Bash**. 
 * The build system uses **GNU Make**.
 * Hardware Profiling is done with [**Intel PCM**](https://software.intel.com/en-us/articles/intel-performance-counter-monitor), which runs on Intel&reg; Core&trade;, Xeon&reg;, Atom&trade; and Xeon Phi&trade; processors.
 * It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS. -->
 
-These instructions provide guidelines for running the software of the benchmark. To run SAGA-Bench with [Intel PCM](https://software.intel.com/en-us/articles/intel-performance-counter-monitor), please see below. 
+These instructions provide guidelines for running the software for runtime profiling. 
+To run SAGA-Bench with [Intel PCM](https://software.intel.com/en-us/articles/intel-performance-counter-monitor), please see below. 
 _TODO_
 1) git clone .....
 2) mkdir bin obj
@@ -70,6 +72,8 @@ An executable `frontEnd` will be created within the main directory. To run it, u
 ```
 Alternatively, there is an example script, runme.sh, which could be executed for an example run. 
 Each run creates two csv files: 1) Alg.csv and 2) Update.csv. These files contain per-batch compute and update times, respectively. 
+
+### Reproducing Hardware-Level Profiling Results in the SAGA-Bench Paper
 
 ## Reproducing Software-Level Profiling Results in the SAGA-Bench Paper
 _TODO_
