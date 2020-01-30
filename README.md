@@ -38,11 +38,11 @@ Each algorithm has been implemented in both the aforementioned compute mdoels.
 
 ## Overview of the Directory Structure 
 _TODO_
-+ **src/dynamic**: Contains all the core implementations of the benchmark. 
-+ **src/common**: what is inputInfo? pcmInfo? errorExtractor.cc? 
-+ **inputResource**: Contains scripts and code to shuffle datasets and produce the format required for the benchmark (see below).
-+ **pcmResource**: Contains several resources to help users integrate [Intel PCM](https://software.intel.com/en-us/articles/intel-performance-counter-monitor) with SAGA-Bench for hardware-level characterization (see below).
-+ Others: 
++ **src/dynamic**: Core implementations of the benchmark. 
++ **src/common**: 
++ **inputResource**: Several resources to produce input dataset file formats (see below).
++ **pcmResource**: Several resources to integrate [Intel PCM](https://software.intel.com/en-us/articles/intel-performance-counter-monitor) with SAGA-Bench for hardware-level characterization (see below).
++ Others: errorExtractor.cc? 
 
 ## Input Datasets
 _TODO_
@@ -89,6 +89,9 @@ _TODO_
 + traverse algorithm 
 + adList single threaded
 + acknowledge GAP from where we borrow and modify software techniques 
+
+## Contacts
+In case of issues, please contact Abanti at abasak@ucsb.edu or Jilan at jilan@ucsb.edu.
 
 ## References
 [1] D. Ediger, R. McColl, J. Riedy, D. Bader, "Stinger: High performance data structure for streaming graphs", _IEEE Conference on High Performance Extreme Computing (HPEC),_ pp. 1-5, 2012.
