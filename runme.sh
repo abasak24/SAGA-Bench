@@ -15,5 +15,5 @@ dataDir=/home/abanti/datasets/SAGAdatasets/
 # Run Wiki-Talk
 #./frontEnd -d 1 -w 0 -f ${dataDir}wiki-talk-pure.shuffle.t.w.csv -b 500000 -s adListChunked -n 2394385 -a bfsdyn -t 64
 
-#Run test 
-./frontEnd -d 1 -w 1 -f ./test.csv -b 10 -t 24 -s adListChunked -n 40 -a traverse 
+#Run test.csv
+#./frontEnd -d 1 -w 1 -f ./test.csv -b 10 -t 24 -s adListChunked -n 40 -a traverse 

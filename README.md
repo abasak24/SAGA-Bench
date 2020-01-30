@@ -96,18 +96,12 @@ Similarly, to measure the memory bandwidth utilization details of the *compute* 
    + include `pcmResource/pcmMemory.h` in `src/dynamic/dyn_pr.h` 
    + include the memory-measurement related initialization and finalization code provided in `pcmResource/PCM.txt` in the function `dynPRAlg` before and after the algorithm implementation (just whether the timers are currently started and stopped).
 
+## Including Other Software Techniques to SAGA-Bench 
+1. *Including a new data structure*:
+2. *Including a new compute model*:
+3. *Include a new algorithm*:
+
 ## Additional Results
-
-## Adding your own data structure, compute model, or algorithm 
-_TODO_
-
-## Miscellaneous
-_TODO_
-
-+ Mention errorExtractor.cc: validation between FS and INC models 
-+ traverse algorithm 
-+ adList single threaded
-+ acknowledge GAP from where we borrow and modify software techniques 
 
 ## Contact
 In case of issues, please contact Abanti at abasak@ucsb.edu. You could also raise an issue so that the response can help other users. 
