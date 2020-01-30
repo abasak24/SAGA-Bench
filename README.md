@@ -54,7 +54,7 @@ Note: To use other file formats, please change the file `src/dynamic/fileReader.
 ### Basic Instructions for Running the Software
 *Note: These basic instructions are for running SAGA-Bench software only and are NOT sufficient for integrating PCM for hardware characterization. For instructions to integrate PCM, please see below.*
 
-SAGA-Bench is implemented in C++11 and the build system uses GNU Make. It uses both OPENMP and Pthreads to launch software threads. It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS. The experiments for our paper have been run on Intel Xeon Gold 6142 (Skylake) server (please refer to Section IV.A of the paper for more details). 
+SAGA-Bench is implemented in C++11 and the build system uses GNU Make. It uses both OPENMP and std::thread to launch software threads. It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS. The experiments for our paper have been run on Intel Xeon Gold 6142 (Skylake) server (please refer to Section IV.A of the paper for more details). 
 
 1. git clone https://github.com/abasak24/SAGA-Bench.git
 2. mkdir bin obj
@@ -80,7 +80,7 @@ ALGORITHM OPTIONS: 1) prfromscratch 2) prdyn 3) ccfromscratch 4) ccdyn 5) mcfrom
 Each run creates two csv files: **Alg.csv** and **Update.csv**. These files contain per-batch compute and update times, respectively, in seconds. 
 
 ### Reproducing Software-Level Characterization Results in the SAGA-Bench Paper
-Please refer to Section IV.B of the paper for a detailed description of our methodology. We turned off the Turbo Boost feature. `profile.sh` is the script we used for producing all the software-level characterization results in the paper. The script uses *OMP_PROC_BIND* and *OMP_PLACES* for pinning OPENMP-generated software threads to hardware threads. To bind pthread-generated software threads to hardware threads, we use *pthread_setaffinity_np* (please see `src/dynamic/frontEnd.cc`, `src/dynamic/adListChunked.h`, and `src/dynamic/darhh.h`).
+Please refer to Section IV.B of the paper for a detailed description of our methodology. We turned off the Turbo Boost feature. `profile.sh` is the script we used for producing all the software-level characterization results in the paper. The script uses *OMP_PROC_BIND* and *OMP_PLACES* for pinning OPENMP-generated software threads to hardware threads. To bind std::thread-generated software threads to hardware threads, we use *pthread_setaffinity_np* (please see `src/dynamic/frontEnd.cc`, `src/dynamic/adListChunked.h`, and `src/dynamic/darhh.h`).
 
 ### Reproducing Hardware-Level Characterization Results in the SAGA-Bench Paper
 We used Intel Processor Counter Monitor (PCM) for memory bandwidth, QPI bandwidth, and cache hit ratio/MPKI measurements. Please download, install, and compile PCM from here: https://github.com/opcm/pcm. Several resources for integrating PCM into SAGA-Bench have been provided in the folder **pcmResource**. First, it is necessary to change the *Makefile* of SAGA-Bench to link with PCM. We have provided an example *Makefile* in `pcmResource/Makefile_example`. Please change `PCM_DIR` in the example Makefile to the directory where you have installed your PCM. 
@@ -103,6 +103,7 @@ These are some guidelines to include one's own data structure or compute model i
 2. *Including a new compute model*: It is possible to introduce a new compute model for any algorithm (let's say BFS) by writing a new function in the algorithm's file (`src/dynamic/dyn_bfs.h` for BFS). For example, `src/dynamic/dyn_bfs.h` currently contains functions `dynBFSAlg()` and `BFSStartFromScratch()` for incremental and non-incremental compute models. Next, the new function much be registered in the class `Algorithm` in `src/dynamic/topAlg.h`.
 
 ## Additional Results
+In addition to the datasets in the paper, we ran the Twitter dataset (1468365182 edges) for all the algorithms on shared-style adjacency list, stinger, and degree-aware hashing. The absolute runtimes and analysis for the Twitter dataset is presented here.
 
 ## Contact
 In case of issues, please contact Abanti at abasak@ucsb.edu. You could also raise an issue in Github so that the response can help other users. 
