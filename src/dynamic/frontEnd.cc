@@ -9,9 +9,7 @@
 #include "topDataStruc.h"
 #include "parser.h"
 
-/*
-  Main thread that launches everything else   
-*/
+/* Main thread that launches everything else */
 
 int main(int argc, char* argv[])
 {    
@@ -20,8 +18,7 @@ int main(int argc, char* argv[])
     if (!file.is_open()) {
         cout << "Couldn't open file " << opts.filename << endl;
 	exit(-1);
-    }
-    
+    }    
 
     std::mutex q_lock;
     
@@ -73,6 +70,5 @@ int main(int argc, char* argv[])
     //cout << "Started printing queues " << endl;
     //printEdgeBatchQueue(queue);
     //cout << "Done printing queues " << endl;    
-
     struc->print();
 }

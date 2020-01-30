@@ -9,12 +9,7 @@
 #include <string>
 #include <vector>
 
-/*
-  Robin Hood Hash Map
-  Implementation
-
-  Author: Ryan Lorica
-*/
+/* Robin Hood Hash Map Implementation */
 
 template <typename K, typename V>
 class rhh_elem {

@@ -29,7 +29,7 @@ fout = open(outputFileName, "w")
 time = 0
 for line in fin:
 	# Don't modify the comment lines (which begin with a '#')
-	# Abanti: I just skip the comment lines altogether
+	# skip the comment lines altogether
 	if line[0] == "#":
 		#fout.write(line.strip() + "\n")
 		continue

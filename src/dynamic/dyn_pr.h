@@ -8,9 +8,7 @@
 #include <cmath>
 #include <iostream>
 
-/*
-  Algorithm: Incremental PageRank and PageRank starting from scratch
-*/
+/* Algorithm: Incremental PageRank and PageRank starting from scratch */
 
 typedef float Rank;
 const float kDamp = 0.85;

@@ -7,9 +7,7 @@
 #include <iostream>
 #include <type_traits>
 
-/*
-Algorithm: Micro-kernel for serial neighbor traversal 
-*/
+/* Algorithm: Micro-kernel for serial (single-threaded) neighbor traversal */
 
 template<typename T>
 void traverseInNeighbors(T* ds)

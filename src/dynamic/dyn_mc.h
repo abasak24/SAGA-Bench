@@ -7,10 +7,9 @@
 #include "../common/timer.h"
 #include "sliding_queue_dynamic.h"
 #include "../common/pvector.h"
-/*
-Algorithm: Incremental Max computation and Max Computation starting from scratch
-Vertex function for this algorithm has been taken from GraPU paper
-*/
+
+/* Algorithm: Incremental Max computation and Max Computation starting from scratch */
+
 template<typename T>
 void MCIter0(T* ds, SlidingQueue<NodeID>& queue){
     pvector<bool> visited(ds->num_nodes, false);

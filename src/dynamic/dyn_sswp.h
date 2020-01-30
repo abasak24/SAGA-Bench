@@ -8,11 +8,8 @@
 #include "sliding_queue_dynamic.h"
 #include "../common/pvector.h"
 
-/*
-Algorithm: Incremental SSWP and SSWP from scratch
-
-Vertex function from Keval Vora's TACO paper
-This is the bottleneck shortest path problem 
+/* Algorithm: Incremental SSWP and SSWP from scratch. 
+This is the bottleneck shortest path problem. 
 */
 
 template<typename T> 

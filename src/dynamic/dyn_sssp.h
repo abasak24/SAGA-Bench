@@ -10,10 +10,7 @@
 #include "../common/timer.h"
 #include "../common/pvector.h"
 
-/*
-Algorithm: Incremental SSSP and SSSP from scratch
-Vertex function from Keval Vora's TACO paper
-*/
+/* Algorithm: Incremental SSSP and SSSP from scratch */
 
 template<typename T> 
 void SSSPIter0(T* ds, SlidingQueue<NodeID>& queue){   

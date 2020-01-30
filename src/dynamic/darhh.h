@@ -14,10 +14,7 @@
 #include "darhh_ld.h"
 #include "darhh_hd.h"
 
-/*
-  Data Structure: Degree-Aware RHH
-  Author: Ryan Lorica
-*/
+/* Data Structure: Degree-Aware Hashing */
 
 template <typename U> class neighborhood;
 template <typename U> class neighborhood_iter;
@@ -171,7 +168,7 @@ void darhh<T>::update(EdgeList const &el)
     bool done = false;
     std::vector<std::unique_ptr<std::thread>> dqs;
 
-    //#######.............Abanti added for thread pinning.............#########
+    //#######............. thread pinning.............#########
     int64_t count = 2;
     //std::cout << "IN" << std::endl;
     for(auto& ptr: in){        
@@ -212,7 +209,7 @@ void darhh<T>::update(EdgeList const &el)
         count++;
         //if(count == 6) count = 26;*/
     } 
-    //#######.............Abanti added for thread pinning.............#########
+    //#######............. thread pinning.............#########
 
     int o_ix, i_ix;
     for (auto& e: el) {

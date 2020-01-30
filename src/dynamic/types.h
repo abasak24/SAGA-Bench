@@ -8,10 +8,8 @@
 #include <queue>
 #include <vector>
 
-/*
-   Basic building blocks for node and its variations, typedefs.
-   Author: Abanti Basak
-*/
+/* Basic building blocks for node and its variations, typedefs. */
+
 typedef int64_t NodeID;
 typedef int64_t Weight;
 typedef int PID;

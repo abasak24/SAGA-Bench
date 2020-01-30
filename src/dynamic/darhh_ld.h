@@ -8,12 +8,7 @@
 #include "types.h"
 #include "rhh.h"
 
-/*
-  Robin Hood Hash Map for Low-Degree Vertices
-  Implementation
-
-  Author: Ryan Lorica
-*/
+/* Robin Hood Hash Map for Low-Degree Vertices Implementation */
 
 template <typename T> class ld_rhh;
 template <typename T> class darhh;

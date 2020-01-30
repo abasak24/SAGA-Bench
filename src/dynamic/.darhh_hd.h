@@ -8,12 +8,7 @@
 
 #include "rhh.h"
 
-/*
-  Robin Hood Has Map for High-Degree Vertices
-  Implementation
-
-  Author: Ryan Lorica
-*/
+/* Robin Hood Has Map for High-Degree Vertices Implementation */
 
 template <typename T> class edge_chunk;
 template <typename T> class hd_rhh;

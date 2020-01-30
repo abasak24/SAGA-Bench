@@ -8,10 +8,7 @@
 #include "sliding_queue_dynamic.h"
 #include "../common/pvector.h"
 
-/*
-Algorithm: Incremental BFS and BFS starting from scratch
-Vertex function for this algorithm has been taken from GraPU paper
-*/
+/* Algorithm: Incremental BFS and BFS starting from scratch */
 
 template<typename T> 
 void BFSIter0(T* ds, SlidingQueue<NodeID>& queue){  

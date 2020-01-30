@@ -1,6 +1,3 @@
-// Copyright (c) 2015, The Regents of the University of California (Regents)
-// See LICENSE.txt for license details
-
 #ifndef SLIDING_QUEUE_H_
 #define SLIDING_QUEUE_H_
 
@@ -9,17 +6,8 @@
 
 #include "../common/platform_atomics.h"
 
-
-/*
-GAP Benchmark Suite
-Class:  SlidingQueue
-Author: Scott Beamer
-
-Double-buffered queue so appends aren't seen until SlideWindow() called
- - Use QueueBuffer when used in parallel to avoid false sharing by doing
-   bulk appends from thread-local storage
-*/
-
+/* This implementation has been borrowed from GAP Benchmark Suite (https://github.com/sbeamer/gapbs) 
+   and modified for SAGA-Bench. */
 
 template <typename T>
 class QueueBuffer;

@@ -8,10 +8,7 @@
 #include "sliding_queue_dynamic.h"
 #include "../common/pvector.h"
 
-/*
-Algorithm: Incremental CC and CC starting from scratch
-Vertex function for this algorithm has been taken from Keval Vora's TACO paper
-*/
+/* Algorithm: Incremental CC and CC starting from scratch */
 
 typedef float Component;
 

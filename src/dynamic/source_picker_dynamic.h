@@ -5,6 +5,9 @@
 #include "types.h"
 #include <random>
 
+/* This implementation has been borrowed from GAP Benchmark Suite (https://github.com/sbeamer/gapbs) 
+   and modified for SAGA-Bench. */
+
 // Used to pick random non-zero degree starting points for search algorithms
 class DynamicSourcePicker {
  public:
