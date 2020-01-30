@@ -65,15 +65,16 @@ An executable `frontEnd` will be created. `frontEnd` should be run with the foll
 -b : batch size (500K is used in our paper evaluation)
 -d : whether the input graph is directed or undirected. 0 = undirected; 1 = directed.
 -w : whether weights should be read from the input file. 0 = don't read weights; 1 = read weights. Weights are required only for SSSP and SSWP. 
--s :
--a : 
+-s : data structure to be used. 
+-a : algorithm to be run. 
 -t : 
+
+DATA STRUCTURE OPTIONS: 1) adListShared 2) adListChunked 3) degAwareRHH 4) stinger
+
+ALGORITHM OPTIONS: 1) prfromscratch 2) prdyn 3) ccfromscratch 4) ccdyn 5) mcfromscratch 6) mcdyn 7) bfsfromscratch 8) bfsyn 9) ssspfromscratch 10) ssspdyn 11) sswpfromscratch 12) sswpdyn
 ```
 
-```
-./frontEnd -d directed -w weighted -f /datasetPath -b batchSize -s dataStructure -n numOfNodes -a algorithm -t numOfThreads
-```
-Alternatively, there is an example script, runme.sh, which could be executed for an example run. 
+`runme.sh` provides example command-line for running experiments. 
 Each run creates two csv files: 1) Alg.csv and 2) Update.csv. These files contain per-batch compute and update times, respectively. 
 
 ### Reproducing Software-Level Profiling Results in the SAGA-Bench Paper
