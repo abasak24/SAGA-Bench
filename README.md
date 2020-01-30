@@ -38,10 +38,10 @@ Each algorithm has been implemented in both the aforementioned compute mdoels.
 
 ## Overview of the Directory Structure 
 _TODO_
-+ **src/dynamic**: Brief description of how src folder is organized
++ **src/dynamic**: Contains all the core implementations of the benchmark. 
 + **src/common**: what is inputInfo? pcmInfo? errorExtractor.cc? 
-+ **inputResource**: 
-+ **pcmResource**: 
++ **inputResource**: Contains scripts and code to shuffle datasets and produce the format required for the benchmark (see below).
++ **pcmResource**: Contains several resources to help users integrate [Intel PCM](https://software.intel.com/en-us/articles/intel-performance-counter-monitor) with SAGA-Bench for hardware-level characterization (see below).
 + Others: 
 
 ## Input Datasets
