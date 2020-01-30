@@ -55,8 +55,8 @@ Note: To use other file formats, please change the file `src/dynamic/fileReader.
 SAGA-Bench is implemented in C++11 and the build system uses GNU Make. It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS. The experiments for our paper have been run on Intel Xeon Gold 6142 (Skylake) server (please refer to Section IV of the paper for more details). 
 
 1. git clone https://github.com/abasak24/SAGA-Bench.git
-2) mkdir bin obj
-3) make 
+2. mkdir bin obj
+3. make 
 
 An executable `frontEnd` will be created. `frontEnd` should be run with the following parameters. `./frontEnd --help` also provides this information.
 
@@ -70,7 +70,6 @@ An executable `frontEnd` will be created. `frontEnd` should be run with the foll
 -t : 
 
 DATA STRUCTURE OPTIONS: 1) adListShared 2) adListChunked 3) degAwareRHH 4) stinger
-
 ALGORITHM OPTIONS: 1) prfromscratch 2) prdyn 3) ccfromscratch 4) ccdyn 5) mcfromscratch 6) mcdyn 7) bfsfromscratch 8) bfsyn 9) ssspfromscratch 10) ssspdyn 11) sswpfromscratch 12) sswpdyn
 ```
 
