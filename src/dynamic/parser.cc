@@ -47,7 +47,7 @@ void printUsage()
 	      << "-w weighted       0=unweighted   1=weighted\n"
 	      << "-d directed       0=undirected   1=directed\n"
 	      << "-s dataStructure  data structure to use (default: adList)\n"
-		  << "-n max number of nodes  (required for stinger)\n"
+		  << "-n max number of nodes  to initialize with\n"
 	      << "-a algorithm      algorithm to run (default: traverse)\n"
 	      << "-t number of threads      (default: 16)\n"
 	      << "  DATA STRUCTURE OPTIONS:\n"
