@@ -70,10 +70,10 @@ An executable `frontEnd` will be created within the main directory. To run it, u
 Alternatively, there is an example script, runme.sh, which could be executed for an example run. 
 Each run creates two csv files: 1) Alg.csv and 2) Update.csv. These files contain per-batch compute and update times, respectively. 
 
-#### Reproducing Software-Level Profiling Results in the SAGA-Bench Paper
+### Reproducing Software-Level Profiling Results in the SAGA-Bench Paper
 Need to mention to run the profile.sh script. 
 
-#### Reproducing Hardware-Level Profiling Results in the SAGA-Bench Paper
+### Reproducing Hardware-Level Profiling Results in the SAGA-Bench Paper
 _TODO_
 + We used Intel Processor Counter Monitor (PCM) for memory bandwidth, QPI bandwidth, and cache hit ratio/MPKI measurements. PCM can be found here: https://github.com/opcm/pcm
 + Provide instructions on how to use PCM.
