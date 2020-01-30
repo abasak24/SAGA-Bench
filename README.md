@@ -52,7 +52,7 @@ Note: To use other file formats, please change the file `src/dynamic/fileReader.
 
 ## Compiling and Running SAGA-Bench 
 ### Basic Instructions for Running the Software
-SAGA-Bench is implemented in C++11 and the build system uses GNU Make. It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS. The experiments for our paper have been run on Intel Xeon Gold 6142 (Skylake) server (please refer to Section IV of the paper for more details). 
+SAGA-Bench is implemented in C++11 and the build system uses GNU Make. It used both OPENMP and Pthreads to launch software threads. It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS. The experiments for our paper have been run on Intel Xeon Gold 6142 (Skylake) server (please refer to Section IV.A of the paper for more details). 
 
 1. git clone https://github.com/abasak24/SAGA-Bench.git
 2. mkdir bin obj
@@ -75,10 +75,10 @@ ALGORITHM OPTIONS: 1) prfromscratch 2) prdyn 3) ccfromscratch 4) ccdyn 5) mcfrom
 ```
 
 `runme.sh` provides example command lines for running experiments. 
-Each run creates two csv files: 1) Alg.csv and 2) Update.csv. These files contain per-batch compute and update times, respectively. 
+Each run creates two csv files: **Alg.csv** and **Update.csv**. These files contain per-batch compute and update times, respectively, in seconds. 
 
 ### Reproducing Software-Level Profiling Results in the SAGA-Bench Paper
-Need to mention to run the profile.sh script. 
+Please refer to Section IV.B of the paper for a detailed description of our methodology. We turned off the Turbo Boost feature. `profile.sh` is the script we used for producing all the software-level characterization results in the paper. The script uses **OMP_PROC_BIND** and **OMP_PLACES** for pinning OPENMP-generated software threads to hardware threads. To bind pthread-generated software threads to hardware threads, we use **pthread_setaffinity_np** (please see `src/dynamic/frontEnd.cc`, `src/dynamic/adListChunked.h`, and `src/dynamic/darhh.h`).
 
 ### Reproducing Hardware-Level Profiling Results in the SAGA-Bench Paper
 _TODO_
