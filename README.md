@@ -98,10 +98,9 @@ Similarly, to measure the memory bandwidth utilization details of the *compute* 
    + include the memory-measurement related initialization and finalization code provided in `pcmResource/PCM.txt` in the function `dynPRAlg` before and after the algorithm implementation (just whether the timers are currently started and stopped). In the intitialization code, please assign *false* to the boolean variable *update*.
 
 ## Including Other Software Techniques in SAGA-Bench 
-These are some guidelines to include one's own data structure, compute model, or algorithm into SAGA-Bench. 
+These are some guidelines to include one's own data structure or compute model in SAGA-Bench. 
 1. *Including a new data structure*: Any new data structure must be inherited from the class `dataStruc` in `src/dynamic/abstract_data_struc.h`. The most important function to implement for a new data structure is `update()` which defines the mechanism to update a batch of edges into the data structure. Next, it is essential to implement the traversal mechanism of the data structure in the file `src/dynamic/traversal.h`.
-2. *Including a new compute model*:
-3. *Include a new algorithm*:
+2. *Including a new compute model*: It is possible to introduce a new compute model for any algorithm (let's say BFS) by writing a new function in the algorithm's file (`src/dynamic/dyn_bfs.h` for BFS). For example, `src/dynamic/dyn_bfs.h` currently contains functions `dynBFSAlg()` and `BFSStartFromScratch()` for incremental and non-incremental compute models. Next, the new function much be registered in the class `Algorithm` in `src/dynamic/topAlg.h`.
 
 ## Additional Results
 
