@@ -51,16 +51,14 @@ Graph datasets are first randomly shuffled to break any ordering in the input fi
 Note: To use other file formats, please change the file `src/dynamic/fileReader.h` to modify how SAGA-Bench should read the input file (i.e., change the function `convertCSVLineIntoEdge`). 
 
 ## Compiling and Running SAGA-Bench 
-### Reproducing Software-Level Profiling Results in the SAGA-Bench Paper
+
+#### Reproducing Software-Level Profiling Results in the SAGA-Bench Paper
 <!-- ## Requirements
 * SAGA-Bench is implemented in **C++11**, with scripts in **Python3** and **Bash**. 
 * The build system uses **GNU Make**.
 * Hardware Profiling is done with [**Intel PCM**](https://software.intel.com/en-us/articles/intel-performance-counter-monitor), which runs on Intel&reg; Core&trade;, Xeon&reg;, Atom&trade; and Xeon Phi&trade; processors.
 * It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS. -->
 
-These instructions provide guidelines for running the software for runtime profiling. 
-To run SAGA-Bench with [Intel PCM](https://software.intel.com/en-us/articles/intel-performance-counter-monitor), please see below. 
-_TODO_
 1) git clone .....
 2) mkdir bin obj
 3) make 
@@ -73,7 +71,7 @@ An executable `frontEnd` will be created within the main directory. To run it, u
 Alternatively, there is an example script, runme.sh, which could be executed for an example run. 
 Each run creates two csv files: 1) Alg.csv and 2) Update.csv. These files contain per-batch compute and update times, respectively. 
 
-### Reproducing Hardware-Level Profiling Results in the SAGA-Bench Paper
+#### Reproducing Hardware-Level Profiling Results in the SAGA-Bench Paper
 
 ## Reproducing Software-Level Profiling Results in the SAGA-Bench Paper
 _TODO_
@@ -102,7 +100,7 @@ _TODO_
 + acknowledge GAP from where we borrow and modify software techniques 
 
 ## Contact
-In case of issues, please contact Abanti at abasak@ucsb.edu or Jilan at jilan@ucsb.edu.
+In case of issues, please contact Abanti at abasak@ucsb.edu or Jilan at jilan@ucsb.edu. You could also raise an issue so that responses can help other users. 
 
 ## References
 [1] D. Ediger, R. McColl, J. Riedy, D. Bader, "Stinger: High performance data structure for streaming graphs", _IEEE Conference on High Performance Extreme Computing (HPEC),_ pp. 1-5, 2012.
