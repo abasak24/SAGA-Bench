@@ -101,8 +101,3 @@ _TODO_
 
 ## Contact
 In case of issues, please contact Abanti at abasak@ucsb.edu. You could also raise an issue so that the response can help other users. 
-
-## References
-[1] D. Ediger, R. McColl, J. Riedy, D. Bader, "Stinger: High performance data structure for streaming graphs", _IEEE Conference on High Performance Extreme Computing (HPEC),_ pp. 1-5, 2012.
-
-[2] K. Iwabuchi, S. Sallinen, R. Pearce, B. V. Essen, M. Gokhale, S. Matsuoka, "Towards a distributed large-scale dynamic graph data store", _Graph Algorithms Building Blocks (GABB 2016) Workshop at IPDPS,_ 2016.
