@@ -17,7 +17,8 @@ This repository contains code, scripts, and user instructions related to the fol
 * Hardware Profiling is done with [**Intel PCM**](https://software.intel.com/en-us/articles/intel-performance-counter-monitor), which runs on Intel&reg; Core&trade;, Xeon&reg;, Atom&trade; and Xeon Phi&trade; processors.
 * It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS.
 
-## Componets of SAGA-Bench
+## Components of SAGA-Bench
+Please refer to the paper for a detailed description of each component. 
 1. **Data Structures**: 
      + Adjacency List (shared style multithreading)
      + Adjacency List (chunked style multithreading)
