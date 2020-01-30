@@ -84,17 +84,17 @@ Please refer to Section IV.B of the paper for a detailed description of our meth
 
 ### Reproducing Hardware-Level Characterization Results in the SAGA-Bench Paper
 We used Intel Processor Counter Monitor (PCM) for memory bandwidth, QPI bandwidth, and cache hit ratio/MPKI measurements. Please download, install, and compile PCM from here: https://github.com/opcm/pcm. Several resources for integrating PCM into SAGA-Bench have been provided in the folder **pcmResource**. First, it is necessary to change the *Makefile* of SAGA-Bench to link with PCM. We have provided an example *Makefile* in `pcmResource/Makefile_example`. Please change `PCM_DIR` in the example Makefile to the directory where you have installed your PCM. 
-`pcmBasic.h` contains code to measure L2/L3 MPKI, hit ratios, and QPI link utilizations. Please check the comments in `pcmBasic.h` to understand the output format/order. 
-`pcmMemory.h` contains code to measure memory bandwidth. Please check the comments and the functions `display_bandwidth_alg` and `display_bandwidth_update` in `pcmMemory.h` to understand the output format/order.  
-Please read `PCM.txt` to understand how to include `pcmBasic.h` or `pcmMemory.h` into SAGA-Bench's *update* or *compute* phases to measure the hardware counters. `PCM.txt` also provides the intiliatization and finalization code that must be included before and after the test code. 
+`pcmResource/pcmBasic.h` contains code to measure L2/L3 MPKI, hit ratios, and QPI link utilizations. Please check the comments in `pcmResource/pcmBasic.h` to understand the output format/order. 
+`pcmResource/pcmMemory.h` contains code to measure memory bandwidth. Please check the comments and the functions `display_bandwidth_alg` and `display_bandwidth_update` in `pcmResource/pcmMemory.h` to understand the output format/order.  
+Please read `pcmResource/PCM.txt` to understand how to include `pcmResource/pcmBasic.h` or `pcmResource/pcmMemory.h` into SAGA-Bench's *update* or *compute* phases to measure the hardware counters. `pcmResource/PCM.txt` also provides the intiliatization and finalization code that must be included before and after the test code. 
 
 For example, to measure the memory bandwidth utilization details of the *update* phase, please do the following:
-   + include `pcmMemory.h` in `src/dynamic/builder.cc` 
-   + include the memory-measurement related initialization and finalization code provided in `PCM.txt` before and after `ds->update(el)` in `src/dynamic/builder.cc` (just whether the timers are currently started and stopped).
+   + include `pcmResource/pcmMemory.h` in `src/dynamic/builder.cc` 
+   + include the memory-measurement related initialization and finalization code provided in `pcmResource/PCM.txt` before and after `ds->update(el)` in `src/dynamic/builder.cc` (just whether the timers are currently started and stopped).
 
 Similarly, to measure the memory bandwidth utilization details of the *compute* phase (when let's say running *incremental pagerank*), please do the following:
-   + include `pcmMemory.h` in `src/dynamic/dyn_pr.h` 
-   + include the memory-measurement related initialization and finalization code provided in `PCM.txt` in the function `dynPRAlg` before and after the algorithm implementation (just whether the timers are currently started and stopped).
+   + include `pcmResource/pcmMemory.h` in `src/dynamic/dyn_pr.h` 
+   + include the memory-measurement related initialization and finalization code provided in `pcmResource/PCM.txt` in the function `dynPRAlg` before and after the algorithm implementation (just whether the timers are currently started and stopped).
 
 ## Additional Results
 
