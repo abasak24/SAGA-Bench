@@ -45,6 +45,9 @@ typedef struct memdata {
     bool PMM;
 } memdata_t;
 
+/* Output format: 
+socket(i) read bW, socket(i) write BW for all i; system read BW; system write BW; system total BW
+*/ 
 void display_bandwidth_alg(PCM *m, memdata_t *md){
     float sysReadDRAM = 0.0, sysWriteDRAM = 0.0, total = 0.0;
     

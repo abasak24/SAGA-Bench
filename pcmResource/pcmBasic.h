@@ -8,8 +8,8 @@
 template <class CounterStateType>
 void display_processor_level_stats(std::ofstream& out, const PCM * m, const CounterStateType & state1, const CounterStateType & state2){
     assert(out.is_open());
-    // L2 MPKI, L3 MPKI, L2 hit rate, LLC hit rate, TLP (active cycles method), TLP (C state method = BigBench paper's method)
-    // incoming QPI link utilization, outgoing QPI link utilization
+    /* Output format/order: L2 MPKI, L3 MPKI, L2 hit rate, LLC hit rate, TLP (active cycles method), TLP (C state method = BigBench paper's method)
+     incoming QPI link utilization, outgoing QPI link utilization */
     assert(m->isL2CacheMissesAvailable() && 
            m->isL3CacheMissesAvailable() && 
            m->isL2CacheHitRatioAvailable() && 

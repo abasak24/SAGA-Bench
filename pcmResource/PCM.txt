@@ -1,6 +1,6 @@
 # This file contains the PCM initialization and finalization lines we need to copy-paste before and after experimental code
 
-1) MEMORY BW MEASUREMENT: A) Include "../common/pcmMemory.h" B) make the update = true in the update code 
+1) MEMORY BW MEASUREMENT: A) Include "..pcmResource/pcmMemory.h" B) make the update = true in the update code 
 
     // ############################### PCM Memory initialization Start ##########################################
     PCM* m = PCM::getInstance();    
@@ -44,7 +44,7 @@
     // ############################### PCM Memory finalization Done ##########################################
 
 
-2) BASIC PROCESSOR LEVEL MEASUREMENTS: A) Include "../common/pcmBasic.h" B) make the update = true in the update code 
+2) BASIC PROCESSOR LEVEL MEASUREMENTS: A) Include "../pcmResource/pcmBasic.h" B) make the update = true in the update code 
 
 // ############################### PCM Processor Level Stats initialization Start ##########################################
     PCM* m = PCM::getInstance();    
