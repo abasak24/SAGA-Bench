@@ -32,7 +32,7 @@ Please refer to the paper for a detailed description of each component.
 ## Overview of the Directory Structure 
 1. **src/dynamic**: Core implementations of the benchmark. They include the following:
     + `frontEnd.cc` is the main/top file which reads command-line parameters, reads edge batches from the input file, initiates the data structure, and launches the scheduler thread. 
-    + `builder.cc` contains function `dequeAndInsertEdge()` which is executed by the scheduler thread. This function updates the data structure and performs an algorithm on it.
+    + `builder.cc` contains the function `dequeAndInsertEdge()` which is executed by the scheduler thread. This function updates the data structure and performs an algorithm on it.
     + *Data structures*: `abstract_data_struc.h` is the top-level abstract class for a data structure. Specific implementations are contained in files `adListShared.h`, `adListCunked.h`, `stinger.h/stinger.cc`, and `darhh.h`. Each file implements the specific fashion in which the *update* operation needs to be performed on the given data structure.
     + *Graph Traversal*: `traversal.h` implements how each data structure needs to be traversed to get the in-neighbors and the out-neighbors. Traversal operation is achieved with two API functions: `in_neigh()` and `out_neigh()`. The specific traversal mechanism details of each data structure must be hidden from these two API functions. 
     + *Compute Models and Algorithms*: `topAlg.h` is the top-level algorithm file where every algorithm is registered. The specific implementation of each algorithm is contained in a file starting with *dyn_* (e.g., `dyn_bfs.h`). Each file implements both the compute models for a specific algorithm. For example, `dyn_bfs.h` contains functions `dynBFSAlg()` for the *incremental* compute model and `BFSStartFromScratch()` for the *recomputation from scratch* compute model. Most of the *recomputation from scratch* implementations have been borrowed from [GAP Benchmark Suite](https://github.com/sbeamer/gapbs) with slight modifications to conform to the API of SAGA-Bench. 
@@ -95,7 +95,7 @@ For example, to measure the memory bandwidth utilization details of the *update*
 
 Similarly, to measure the memory bandwidth utilization details of the *compute* phase (when let's say running *incremental pagerank*), please do the following:
    + include `pcmResource/pcmMemory.h` in `src/dynamic/dyn_pr.h` 
-   + include the memory-measurement related initialization and finalization code provided in `pcmResource/PCM.txt` in the function `dynPRAlg` before and after the algorithm implementation (just whether the timers are currently started and stopped). In the intitialization code, please assign *false* to the boolean variable *update*.
+   + include the memory-measurement related initialization and finalization code provided in `pcmResource/PCM.txt` in the function `dynPRAlg()` before and after the algorithm implementation (just whether the timers are currently started and stopped). In the intitialization code, please assign *false* to the boolean variable *update*.
 
 ## Including Other Software Techniques in SAGA-Bench 
 These are some guidelines to include one's own data structure or compute model in SAGA-Bench. 
