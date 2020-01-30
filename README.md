@@ -11,12 +11,6 @@ This repository contains code, scripts, and user instructions related to the fol
 
 **SAGA-Bench** is a C++ benchmark for **S**tre**A**ming **G**raph **A**nalytics containing a collection of data structures and compute models on the same platform for a fair and systematic study. SAGA-Bench simultaneously provides 1) a common platform for performance analysis studies of software techniques and 2) a benchmark for architecture studies. SAGA-Bench implements runtime profiling, as well as hardware analysis via [Intel Processor Counter Monitor (PCM)](https://software.intel.com/en-us/articles/intel-performance-counter-monitor).
 
-## Requirements
-* SAGA-Bench is implemented in **C++11**, with scripts in **Python3** and **Bash**. 
-* The build system uses **GNU Make**.
-* Hardware Profiling is done with [**Intel PCM**](https://software.intel.com/en-us/articles/intel-performance-counter-monitor), which runs on Intel&reg; Core&trade;, Xeon&reg;, Atom&trade; and Xeon Phi&trade; processors.
-* It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS.
-
 ## Components of SAGA-Bench
 Please refer to the paper for a detailed description of each component. 
 1. **Data Structures**: 
@@ -53,7 +47,13 @@ Graph datasets are first randomly shuffled to break any ordering in the input fi
 + Add weight and timestamps (script provided in folder inputResource)
 + The result input graph should look something like test.csv
 
-## Installing, Compiling, and Running SAGA-Bench 
+## Compiling and Running SAGA-Bench 
+## Requirements
+* SAGA-Bench is implemented in **C++11**, with scripts in **Python3** and **Bash**. 
+* The build system uses **GNU Make**.
+* Hardware Profiling is done with [**Intel PCM**](https://software.intel.com/en-us/articles/intel-performance-counter-monitor), which runs on Intel&reg; Core&trade;, Xeon&reg;, Atom&trade; and Xeon Phi&trade; processors.
+* It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS.
+
 _TODO_
 1) git clone .....
 2) mkdir bin obj
@@ -93,7 +93,7 @@ _TODO_
 + adList single threaded
 + acknowledge GAP from where we borrow and modify software techniques 
 
-## Contacts
+## Contact
 In case of issues, please contact Abanti at abasak@ucsb.edu or Jilan at jilan@ucsb.edu.
 
 ## References
