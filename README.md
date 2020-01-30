@@ -52,13 +52,23 @@ Note: To use other file formats, please change the file `src/dynamic/fileReader.
 
 ## Compiling and Running SAGA-Bench 
 ### Basic Instructions for Running the Software
-SAGA-Bench is implemented in **C++11** and the build system uses **GNU Make**. It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS. The experiments for our paper have been run on Intel Xeon Gold 6142 (Skylake) server (please refer to Section IV of the paper for more details). The software has also been tested on Intel Xeon E5-2680 server. 
+SAGA-Bench is implemented in C++11 and the build system uses GNU Make. It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS. The experiments for our paper have been run on Intel Xeon Gold 6142 (Skylake) server (please refer to Section IV of the paper for more details). 
 
-1) git clone .....
+1. git clone https://github.com/abasak24/SAGA-Bench.git
 2) mkdir bin obj
 3) make 
 
-An executable `frontEnd` will be created within the main directory. To run it, use the command with specific parameters:
+An executable `frontEnd` will be created. To run it, use the command with specific parameters:
+
+```
+-f      : provides a location to an input graph file
+-b      : batch size (500K is used in our paper evaluation)
+-d      : whether the input graph is directed or undirected. 0 = undirected; 1 = directed.
+-w      : whether weights should be read from the input file. 0 = don't read weights; 1 = read weights. Weights are required only for SSSP and SSWP. 
+-s      :
+-a      : 
+-t      : 
+```
 
 ```
 ./frontEnd -d directed -w weighted -f /datasetPath -b batchSize -s dataStructure -n numOfNodes -a algorithm -t numOfThreads
