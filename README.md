@@ -105,4 +105,4 @@ These are some guidelines to include one's own data structure or compute model i
 ## Additional Results
 
 ## Contact
-In case of issues, please contact Abanti at abasak@ucsb.edu. You could also raise an issue so that the response can help other users. 
+In case of issues, please contact Abanti at abasak@ucsb.edu. You could also raise an issue in Github so that the response can help other users. 
