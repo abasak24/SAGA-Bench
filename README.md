@@ -79,15 +79,12 @@ ALGORITHM OPTIONS: 1) prfromscratch 2) prdyn 3) ccfromscratch 4) ccdyn 5) mcfrom
 `runme.sh` provides example command lines for running experiments. 
 Each run creates two csv files: **Alg.csv** and **Update.csv**. These files contain per-batch compute and update times, respectively, in seconds. 
 
-### Reproducing Software-Level Profiling Results in the SAGA-Bench Paper
+### Reproducing Software-Level Characterization Results in the SAGA-Bench Paper
 Please refer to Section IV.B of the paper for a detailed description of our methodology. We turned off the Turbo Boost feature. `profile.sh` is the script we used for producing all the software-level characterization results in the paper. The script uses *OMP_PROC_BIND* and *OMP_PLACES* for pinning OPENMP-generated software threads to hardware threads. To bind pthread-generated software threads to hardware threads, we use *pthread_setaffinity_np* (please see `src/dynamic/frontEnd.cc`, `src/dynamic/adListChunked.h`, and `src/dynamic/darhh.h`).
 
-### Reproducing Hardware-Level Profiling Results in the SAGA-Bench Paper
-_TODO_
-+ We used Intel Processor Counter Monitor (PCM) for memory bandwidth, QPI bandwidth, and cache hit ratio/MPKI measurements. PCM can be found here: https://github.com/opcm/pcm
-+ Provide instructions on how to use PCM.
-+ Download install PCM 
-+ Modify the Makefile (example provided in folder pcmResource)
+### Reproducing Hardware-Level Characterization Results in the SAGA-Bench Paper
+We used Intel Processor Counter Monitor (PCM) for memory bandwidth, QPI bandwidth, and cache hit ratio/MPKI measurements. Please download, install, and compile PCM from here: https://github.com/opcm/pcm. Several resources for integrating PCM into SAGA-Bench have been provided in the folder **pcmResource**. First, it is necessary to change the *Makefile* of SAGA-Bench to link with PCM. We have provided an example *Makefile* in `pcmResource/Makefile_example`. Please change `PCM_DIR` in the example Makefile to the directory where you have installed your PCM. 
+`pcmBasic.h` contains code to get information related to L2 and L3 MPKI, hit ratios, and QPI link utilizations. Please check the comments in the file to understand the output format. 
 + Information on how to include PCM code before and after experimental code is provided in folder pcmResource
 
 ## Additional Results

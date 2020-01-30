@@ -1,0 +1,75 @@
+# This file contains the PCM initialization and finalization lines we need to copy-paste before and after experimental code
+
+1) MEMORY BW MEASUREMENT: A) Include "../common/pcmMemory.h" B) make the update = true in the update code 
+
+    // ############################### PCM Memory initialization Start ##########################################
+    PCM* m = PCM::getInstance();    
+    bool PMM = false, update = false; int rankA = -1, rankB = -1;
+    if (!m->hasPCICFGUncore())
+    {
+        std::cerr << "Unsupported processor model (" << m->getCPUModel() << ")." << std::endl;
+        if (m->memoryTrafficMetricsAvailable())
+            cerr << "For processor-level memory bandwidth statistics please use pcm.x" << endl;
+        exit(EXIT_FAILURE);
+    }
+    PCM::ErrorCode status = m->programServerUncoreMemoryMetrics(rankA, rankB, PMM);
+    if(status != PCM::Success){
+        cout << "ERROR! Could not program PMU " << endl;
+        return;
+    }     
+    
+    ServerUncorePowerState * BeforeState = new ServerUncorePowerState[m->getNumSockets()];
+    ServerUncorePowerState * AfterState = new ServerUncorePowerState[m->getNumSockets()];
+    uint64 BeforeTime = 0, AfterTime = 0;
+
+    // before counter states     
+    for(uint32 i=0; i<m->getNumSockets(); ++i){
+        BeforeState[i] = m->getServerUncorePowerState(i); 
+    }
+    BeforeTime = m->getTickCount();        
+    // ############################### PCM Memory initialization Done ##########################################
+    
+    // ############################### PCM Memory finalization Start ##########################################
+    AfterTime = m->getTickCount();
+    // after counter states     
+    for(uint32 i=0; i<m->getNumSockets(); ++i){
+        AfterState[i] = m->getServerUncorePowerState(i);
+    }
+
+    calculate_bandwidth(m, BeforeState, AfterState, AfterTime-BeforeTime, update, PMM);
+    
+    delete[] BeforeState;
+    delete[] AfterState;
+    m->cleanup();
+    // ############################### PCM Memory finalization Done ##########################################
+
+
+2) BASIC PROCESSOR LEVEL MEASUREMENTS: A) Include "../common/pcmBasic.h" B) make the update = true in the update code 
+
+// ############################### PCM Processor Level Stats initialization Start ##########################################
+    PCM* m = PCM::getInstance();    
+    bool update = false; 
+    
+    PCM::ErrorCode status = m->program();
+    if(status != PCM::Success){
+        cout << "ERROR! Could not program PMU " << endl;
+        return;
+    }     
+    
+    std::vector<CoreCounterState> cstates1, cstates2;
+    std::vector<SocketCounterState> sktstate1, sktstate2;
+    SystemCounterState sstate1, sstate2;
+
+    // before counter states     
+    m->getAllCounterStates(sstate1, sktstate1, cstates1);        
+    // ############################### PCM Processor Level Stats initialization Done ##########################################
+    
+    
+    // ############################### PCM Processor Level Stats finalization Start ##########################################
+    // after counter states     
+    m->getAllCounterStates(sstate2, sktstate2, cstates2);
+
+    display_processor(m, sstate1, sstate2, update);    
+    
+    m->cleanup();
+    // ############################### PCM Processor Level Stats finalization Done ##########################################

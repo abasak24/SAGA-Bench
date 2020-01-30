@@ -32,7 +32,5 @@
 *.app
 
 frontEnd
-*.txt
 bin/*
 obj/*
-src/common/pcm*
