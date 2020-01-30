@@ -17,24 +17,22 @@ This repository contains code, scripts, and user instructions related to the fol
 * Hardware Profiling is done with [**Intel PCM**](https://software.intel.com/en-us/articles/intel-performance-counter-monitor), which runs on Intel&reg; Core&trade;, Xeon&reg;, Atom&trade; and Xeon Phi&trade; processors.
 * It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS.
 
-## Data Structures 
-+ Adjacency List (shared style multithreading)
-+ Adjacency List (chunked style multithreading)
-+ Stinger 
-+ Degree-Aware Hashing
-
-## Compute Models
-+ Recomputation from scratch
-+ Incremental
-
-## Algorithms
-Each algorithm has been implemented in both the aforementioned compute mdoels. 
-+ Breadth-First Search (BFS)
-+ Single-Source Shortest Paths (SSSP)
-+ PageRank (PR)
-+ Connected Components (CC)
-+ Single-Source Widest Paths (SSWP)
-+ Max Computation (MC)
+## Componets of SAGA-Bench
+1. **Data Structures**: 
+     + Adjacency List (shared style multithreading)
+     + Adjacency List (chunked style multithreading)
+     + Stinger 
+     + Degree-Aware Hashing
+2. **Compute Models**:
+     + Recomputation from scratch
+     + Incremental
+3. **Algorithms** (each algorithm has been implemented in both the aforementioned compute models): 
+     + Breadth-First Search (BFS)
+     + Single-Source Shortest Paths (SSSP)
+     + PageRank (PR)
+     + Connected Components (CC)
+     + Single-Source Widest Paths (SSWP)
+     + Max Computation (MC)
 
 ## Overview of the Directory Structure 
 1. **src/dynamic**: Core implementations of the benchmark. They include the following:
@@ -42,14 +40,14 @@ Each algorithm has been implemented in both the aforementioned compute mdoels.
     + `builder.cc` contains function `dequeAndInsertEdge` which is executed by the scheduler thread. This functions updates the data structure and performs an algorithm on it.
     + *Data structures*: `abstract_data_struc.h` is the top-level abstract class for a data structure. Specific implementations are contained in files `adListShared.h`, `adListCunked.h`, `stinger.h/stinger.cc`, and `darhh.h`. Each file implements the specific fashion in which the *update* operation needs to be performed on the given data structure.
     + *Graph Traversal*: `traversal.h` implements how each data structure needs to be traversed to get the in-neighbors and the out-neighbors. Traversal operation is achieved with two API functions: `in_neigh()` and `out_neigh()`. The specific traversal mechanism details of each data structure must be hidden from these two API functions. 
-    + *Compute Models and Algorithms*: `topAlg.h` is the top-level algorithm file where every algorithm is registered. The specific implementation of each algorithm is contained in a file starting with *dyn_* (e.g., `dyn_bfs.h`). Each file implements both the compute models for a specific algorithm. For example, `dyn_bfs.h` contains functions `dynBFSAlg` for the *incremental* compute model and `BFSStartFromScratch` for the *recomputation from scratch* compute model. Most of the *recomputation from scratch* implementation have been borrowed from [GAP Benchmark Suite](https://github.com/sbeamer/gapbs) with slight modifications to conform to SAGA-Bench's API. 
+    + *Compute Models and Algorithms*: `topAlg.h` is the top-level algorithm file where every algorithm is registered. The specific implementation of each algorithm is contained in a file starting with *dyn_* (e.g., `dyn_bfs.h`). Each file implements both the compute models for a specific algorithm. For example, `dyn_bfs.h` contains functions `dynBFSAlg` for the *incremental* compute model and `BFSStartFromScratch` for the *recomputation from scratch* compute model. Most of the *recomputation from scratch* implementations have been borrowed from [GAP Benchmark Suite](https://github.com/sbeamer/gapbs) with slight modifications to conform to the API of SAGA-Bench. 
 2. **src/common**: Some utility elements borrowed from [GAP Benchmark Suite](https://github.com/sbeamer/gapbs).
 3. **inputResource**: Several resources to produce input dataset file formats (see below).
 4. **pcmResource**: Several resources to integrate [Intel PCM](https://software.intel.com/en-us/articles/intel-performance-counter-monitor) with SAGA-Bench for hardware-level characterization (see below).
 5. Others: `profile.sh` and `runme.sh` are example scripts to run experiments. `test.csv` is an example of the input dataset format. 
 
 ## Input Datasets
-_TODO_
+Graph datasets are first randomly shuffled to break any ordering in the input files. This is done to ensure the realistic scenario that streaming edges are not likely to come in any pre-defined order. The shuffled input file is then read in batches of 500K edges. Please refer to the paper to check which datasets we used for our evaluation. The resources for preparing the input datasets are provided in the folder **inputResource**. `shuffle.sh` can be used to shuffle a dataset file in .txt format (e.g., those found in [SNAP](https://snap.stanford.edu/data/)). After shuffling, weights and 
 + Shuffle datasets (script provided in folder inputResource)
 + Add weight and timestamps (script provided in folder inputResource)
 + The result input graph should look something like test.csv
