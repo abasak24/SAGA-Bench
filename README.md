@@ -90,11 +90,11 @@ Please read `pcmResource/PCM.txt` to understand how to include `pcmResource/pcmB
 
 For example, to measure the memory bandwidth utilization details of the *update* phase, please do the following:
    + include `pcmResource/pcmMemory.h` in `src/dynamic/builder.cc` 
-   + include the memory-measurement related initialization and finalization code provided in `pcmResource/PCM.txt` before and after `ds->update(el)` in `src/dynamic/builder.cc` (just whether the timers are currently started and stopped).
+   + include the memory-measurement related initialization and finalization code provided in `pcmResource/PCM.txt` before and after `ds->update(el)` in `src/dynamic/builder.cc` (just whether the timers are currently started and stopped). In the intitialization code, please assign *true* to the boolean variable *update*.
 
 Similarly, to measure the memory bandwidth utilization details of the *compute* phase (when let's say running *incremental pagerank*), please do the following:
    + include `pcmResource/pcmMemory.h` in `src/dynamic/dyn_pr.h` 
-   + include the memory-measurement related initialization and finalization code provided in `pcmResource/PCM.txt` in the function `dynPRAlg` before and after the algorithm implementation (just whether the timers are currently started and stopped).
+   + include the memory-measurement related initialization and finalization code provided in `pcmResource/PCM.txt` in the function `dynPRAlg` before and after the algorithm implementation (just whether the timers are currently started and stopped). In the intitialization code, please assign *false* to the boolean variable *update*.
 
 ## Including Other Software Techniques in SAGA-Bench 
 1. *Including a new data structure*:
