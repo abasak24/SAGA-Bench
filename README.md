@@ -65,8 +65,8 @@ An executable `frontEnd` will be created. `frontEnd` should be run with the foll
 -b : batch size (500K is used in our paper evaluation)
 -d : whether the input graph is directed or undirected. 0 = undirected; 1 = directed.
 -w : whether weights should be read from the input file. 0 = don't read weights; 1 = read weights. Weights are required only for SSSP and SSWP. 
--s : data structure to be used (see *DATA STRUCTURE OPTIONS* below). 
--a : algorithm to be run (see *ALGORITHM OPTIONS* below). 
+-s : data structure to be used (see DATA STRUCTURE OPTIONS below). 
+-a : algorithm to be run (see ALGORITHM OPTIONS below). 
 -n : max number of nodes the data structure must be initialized with. 
 -t : number of data structure chunks for chunked-style adjacency list or degree-aware hashing. Each chunk corresponds to one thread. This parameter has no meaning for shared-style adjacency list and stinger (the value is not read for these two data structures).
 
@@ -74,7 +74,7 @@ DATA STRUCTURE OPTIONS: 1) adListShared 2) adListChunked 3) degAwareRHH 4) sting
 ALGORITHM OPTIONS: 1) prfromscratch 2) prdyn 3) ccfromscratch 4) ccdyn 5) mcfromscratch 6) mcdyn 7) bfsfromscratch 8) bfsyn 9) ssspfromscratch 10) ssspdyn 11) sswpfromscratch 12) sswpdyn
 ```
 
-`runme.sh` provides example command-line for running experiments. It shows the value of max number of initializing nodes for each dataset we used. 
+`runme.sh` provides example command lines for running experiments. 
 Each run creates two csv files: 1) Alg.csv and 2) Update.csv. These files contain per-batch compute and update times, respectively. 
 
 ### Reproducing Software-Level Profiling Results in the SAGA-Bench Paper
