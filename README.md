@@ -102,8 +102,5 @@ These are some guidelines to include one's own data structure or compute model i
 1. *Including a new data structure*: Any new data structure must be inherited from the class `dataStruc` in `src/dynamic/abstract_data_struc.h`. The most important function to implement for a new data structure is `update()` which defines the mechanism to update a batch of edges into the data structure. Next, it is essential to implement the traversal mechanism of the data structure in the file `src/dynamic/traversal.h`.
 2. *Including a new compute model*: It is possible to introduce a new compute model for any algorithm (let's say BFS) by writing a new function in the algorithm's file (`src/dynamic/dyn_bfs.h` for BFS). For example, `src/dynamic/dyn_bfs.h` currently contains functions `dynBFSAlg()` and `BFSStartFromScratch()` for incremental and non-incremental compute models. Next, the new function much be registered in the class `Algorithm` in `src/dynamic/topAlg.h`.
 
-## Additional Results
-In addition to the datasets in the paper, we ran the Twitter dataset (1468365182 edges) for all the algorithms on shared-style adjacency list, stinger, and degree-aware hashing. The absolute runtimes and analysis for the Twitter dataset is presented here.
-
 ## Contact
 In case of issues, please contact Abanti at abasak@ucsb.edu. You could also raise an issue in Github so that the response can help other users. 
