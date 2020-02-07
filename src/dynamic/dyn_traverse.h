@@ -3,7 +3,7 @@
 
 #include "types.h"
 #include "traversal.h"
-
+#include "../common/timer.h"
 #include <iostream>
 #include <type_traits>
 
@@ -45,8 +45,16 @@ void traverseOutNeighbors(T* ds)
 template<typename T>
 void traverseAlg(T* ds)
 {
+    Timer t;
+    t.Start();
+
     traverseInNeighbors(ds);        
     if(ds->directed)
-	traverseOutNeighbors(ds);           
+	traverseOutNeighbors(ds);  
+
+    t.Stop();    
+    ofstream out("Alg.csv", std::ios_base::app);   
+    out << t.Seconds() << std::endl;    
+    out.close();         
 }
 #endif  // DYN_TRAVERSE_H_
