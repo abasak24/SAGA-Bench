@@ -54,8 +54,9 @@ Note: To use other file formats, please change the file `src/dynamic/fileReader.
 SAGA-Bench is implemented in C++11 and the build system uses GNU Make. It uses both OPENMP and std::thread to launch software threads. It has been tested on Ubuntu 18.04 LTS, Ubuntu 16.04 LTS, and CentOS. The experiments for our paper have been run on Intel Xeon Gold 6142 (Skylake) server (please refer to Section IV.A of the paper for more details). 
 
 1. git clone https://github.com/abasak24/SAGA-Bench.git
-2. mkdir bin obj
-3. make 
+2. cd SAGA-Bench
+3. mkdir bin obj
+4. make 
 
 An executable `frontEnd` will be created. `frontEnd` should be run with the following parameters. `./frontEnd --help` also provides this information.
 
@@ -88,11 +89,11 @@ Please read `pcmResource/PCM.txt` to understand how to include `pcmResource/pcmB
 
 For example, to measure the memory bandwidth utilization details of the *update* phase, please do the following:
    + include `pcmResource/pcmMemory.h` in `src/dynamic/builder.cc` 
-   + include the memory-measurement related initialization and finalization code provided in `pcmResource/PCM.txt` before and after `ds->update(el)` in `src/dynamic/builder.cc` (just whether the timers are currently started and stopped). In the intitialization code, please assign *true* to the boolean variable *update*.
+   + include the memory-measurement related initialization and finalization code provided in `pcmResource/PCM.txt` before and after `ds->update(el)` in `src/dynamic/builder.cc` (just where the timers are currently started and stopped). In the intitialization code, please assign *true* to the boolean variable *update*.
 
 Similarly, to measure the memory bandwidth utilization details of the *compute* phase (when let's say running *incremental pagerank*), please do the following:
    + include `pcmResource/pcmMemory.h` in `src/dynamic/dyn_pr.h` 
-   + include the memory-measurement related initialization and finalization code provided in `pcmResource/PCM.txt` in the function `dynPRAlg()` before and after the algorithm implementation (just whether the timers are currently started and stopped). In the intitialization code, please assign *false* to the boolean variable *update*.
+   + include the memory-measurement related initialization and finalization code provided in `pcmResource/PCM.txt` in the function `dynPRAlg()` before and after the algorithm implementation (just where the timers are currently started and stopped). In the intitialization code, please assign *false* to the boolean variable *update*.
 
 ## Including Other Software Techniques in SAGA-Bench 
 These are some guidelines to include one's own data structure or compute model in SAGA-Bench. 
