@@ -75,7 +75,7 @@ ALGORITHM OPTIONS: 1) prfromscratch 2) prdyn 3) ccfromscratch 4) ccdyn 5) mcfrom
 ```
 
 `runme.sh` provides example command lines for running experiments. 
-Each run generates two csv files: **Alg.csv** and **Update.csv**. These files contain per-batch compute and update times, respectively, in seconds. Below is a reference standard output of running the provided mock dataset `test.csv` on incremental Pagerank algorithm and stinger data structure:
+Each run generates two csv files: **Alg.csv** and **Update.csv**. These files contain per-batch compute and update times, respectively, in seconds. Below is a reference standard output of running the provided mock dataset `test.csv` on incremental Pagerank algorithm and stinger data structure (see the command line in `runme.sh`):
 
 ```
 Algorithm: prdyn
