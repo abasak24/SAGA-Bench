@@ -15,7 +15,7 @@ void* dequeAndInsertEdge(
     std::string algorithm,
     bool *still_reading)
 {	
-	std::cout << "Thread dequeAndInsertEdge: on CPU " << sched_getcpu() << "\n";
+	//std::cout << "Thread dequeAndInsertEdge: on CPU " << sched_getcpu() << "\n";
     Algorithm alg(algorithm, ds, dtype);
     int batch = 0;
     EdgeList el;

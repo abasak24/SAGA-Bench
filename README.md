@@ -75,7 +75,19 @@ ALGORITHM OPTIONS: 1) prfromscratch 2) prdyn 3) ccfromscratch 4) ccdyn 5) mcfrom
 ```
 
 `runme.sh` provides example command lines for running experiments. 
-Each run generates two csv files: **Alg.csv** and **Update.csv**. These files contain per-batch compute and update times, respectively, in seconds. 
+Each run generates two csv files: **Alg.csv** and **Update.csv**. These files contain per-batch compute and update times, respectively, in seconds. Below is a reference standard output of running the provided mock dataset `test.csv` on incremental Pagerank algorithm and stinger data structure:
+
+```
+Algorithm: prdyn
+Data type: stinger
+Updated Batch: 0
+Running dynamic PR
+Updated Batch: 1
+Running dynamic PR
+Updated Batch: 2
+Running dynamic PR
+  Actual numNodes: 37 numNodes initialized with: 40 numEdges: 60 weighted: 1 directed: 1
+```
 
 ### Reproducing Software-Level Characterization Results in the SAGA-Bench Paper
 Please refer to Section IV.B of the paper for a detailed description of our methodology. We turned off the Turbo Boost feature. `profile.sh` is the script we used for producing all the software-level characterization results in the paper. The script uses *OMP_PROC_BIND* and *OMP_PLACES* for pinning OPENMP-generated software threads to hardware threads. To bind std::thread-generated software threads to hardware threads, we use *pthread_setaffinity_np* (please see `src/dynamic/frontEnd.cc`, `src/dynamic/adListChunked.h`, and `src/dynamic/darhh.h`).
