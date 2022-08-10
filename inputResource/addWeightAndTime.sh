@@ -32,6 +32,6 @@ fi
 echo ""
 
 # Use the Python program to add the desired values to the input edgelist file
-python -u src/appendValues.py ${inputFileName} ${option} ${maxWeight}
+python -u ./appendValues.py ${inputFileName} ${option} ${maxWeight}
 echo ""
 echo "DONE"
